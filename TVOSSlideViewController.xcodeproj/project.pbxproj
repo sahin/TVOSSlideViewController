@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B225103A1C7D615100445321 /* TVOSSlideViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22510391C7D615100445321 /* TVOSSlideViewControllerTests.swift */; };
+		B22510451C7D615100445321 /* TVOSSlideViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22510441C7D615100445321 /* TVOSSlideViewControllerUITests.swift */; };
+		B225105E1C7D627F00445321 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22510551C7D627F00445321 /* ViewController.swift */; };
+		B225105F1C7D627F00445321 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22510571C7D627F00445321 /* AppDelegate.swift */; };
+		B22510601C7D627F00445321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22510581C7D627F00445321 /* Assets.xcassets */; };
+		B22510611C7D627F00445321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22510591C7D627F00445321 /* Main.storyboard */; };
+		B22510621C7D627F00445321 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B225105B1C7D627F00445321 /* Info.plist */; };
+		B22510631C7D627F00445321 /* TVOSSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225105D1C7D627F00445321 /* TVOSSlideViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B22510361C7D615100445321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B225101C1C7D615100445321 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B22510231C7D615100445321;
+			remoteInfo = TVOSSlideViewController;
+		};
+		B22510411C7D615100445321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B225101C1C7D615100445321 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B22510231C7D615100445321;
+			remoteInfo = TVOSSlideViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B22510241C7D615100445321 /* TVOSSlideViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVOSSlideViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22510351C7D615100445321 /* TVOSSlideViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVOSSlideViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22510391C7D615100445321 /* TVOSSlideViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVOSSlideViewControllerTests.swift; sourceTree = "<group>"; };
+		B225103B1C7D615100445321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22510401C7D615100445321 /* TVOSSlideViewControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVOSSlideViewControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22510441C7D615100445321 /* TVOSSlideViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVOSSlideViewControllerUITests.swift; sourceTree = "<group>"; };
+		B22510461C7D615100445321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22510551C7D627F00445321 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B22510571C7D627F00445321 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B22510581C7D627F00445321 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B225105A1C7D627F00445321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B225105B1C7D627F00445321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B225105D1C7D627F00445321 /* TVOSSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSSlideViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B22510211C7D615100445321 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22510321C7D615100445321 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B225103D1C7D615100445321 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EB9F9BBB3563364016F33D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B225101B1C7D615100445321 = {
+			isa = PBXGroup;
+			children = (
+				B22510261C7D615100445321 /* TVOSSlideViewController */,
+				B22510381C7D615100445321 /* TVOSSlideViewControllerTests */,
+				B22510431C7D615100445321 /* TVOSSlideViewControllerUITests */,
+				B22510251C7D615100445321 /* Products */,
+				6EB9F9BBB3563364016F33D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B22510251C7D615100445321 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B22510241C7D615100445321 /* TVOSSlideViewController.app */,
+				B22510351C7D615100445321 /* TVOSSlideViewControllerTests.xctest */,
+				B22510401C7D615100445321 /* TVOSSlideViewControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B22510261C7D615100445321 /* TVOSSlideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B225105C1C7D627F00445321 /* TVOSSlideViewConroller */,
+				B22510541C7D627F00445321 /* Demo */,
+				B22510561C7D627F00445321 /* SupportingFiles */,
+			);
+			path = TVOSSlideViewController;
+			sourceTree = "<group>";
+		};
+		B22510381C7D615100445321 /* TVOSSlideViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B22510391C7D615100445321 /* TVOSSlideViewControllerTests.swift */,
+				B225103B1C7D615100445321 /* Info.plist */,
+			);
+			path = TVOSSlideViewControllerTests;
+			sourceTree = "<group>";
+		};
+		B22510431C7D615100445321 /* TVOSSlideViewControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B22510441C7D615100445321 /* TVOSSlideViewControllerUITests.swift */,
+				B22510461C7D615100445321 /* Info.plist */,
+			);
+			path = TVOSSlideViewControllerUITests;
+			sourceTree = "<group>";
+		};
+		B22510541C7D627F00445321 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				B22510551C7D627F00445321 /* ViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		B22510561C7D627F00445321 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B22510571C7D627F00445321 /* AppDelegate.swift */,
+				B22510581C7D627F00445321 /* Assets.xcassets */,
+				B22510591C7D627F00445321 /* Main.storyboard */,
+				B225105B1C7D627F00445321 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B225105C1C7D627F00445321 /* TVOSSlideViewConroller */ = {
+			isa = PBXGroup;
+			children = (
+				B225105D1C7D627F00445321 /* TVOSSlideViewController.swift */,
+			);
+			path = TVOSSlideViewConroller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B22510231C7D615100445321 /* TVOSSlideViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B22510491C7D615100445321 /* Build configuration list for PBXNativeTarget "TVOSSlideViewController" */;
+			buildPhases = (
+				B22510201C7D615100445321 /* Sources */,
+				B22510211C7D615100445321 /* Frameworks */,
+				B22510221C7D615100445321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVOSSlideViewController;
+			productName = TVOSSlideViewController;
+			productReference = B22510241C7D615100445321 /* TVOSSlideViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B22510341C7D615100445321 /* TVOSSlideViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B225104C1C7D615100445321 /* Build configuration list for PBXNativeTarget "TVOSSlideViewControllerTests" */;
+			buildPhases = (
+				B22510311C7D615100445321 /* Sources */,
+				B22510321C7D615100445321 /* Frameworks */,
+				B22510331C7D615100445321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B22510371C7D615100445321 /* PBXTargetDependency */,
+			);
+			name = TVOSSlideViewControllerTests;
+			productName = TVOSSlideViewControllerTests;
+			productReference = B22510351C7D615100445321 /* TVOSSlideViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B225103F1C7D615100445321 /* TVOSSlideViewControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B225104F1C7D615100445321 /* Build configuration list for PBXNativeTarget "TVOSSlideViewControllerUITests" */;
+			buildPhases = (
+				B225103C1C7D615100445321 /* Sources */,
+				B225103D1C7D615100445321 /* Frameworks */,
+				B225103E1C7D615100445321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B22510421C7D615100445321 /* PBXTargetDependency */,
+			);
+			name = TVOSSlideViewControllerUITests;
+			productName = TVOSSlideViewControllerUITests;
+			productReference = B22510401C7D615100445321 /* TVOSSlideViewControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B225101C1C7D615100445321 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = MovieLaLa;
+				TargetAttributes = {
+					B22510231C7D615100445321 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					B22510341C7D615100445321 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = B22510231C7D615100445321;
+					};
+					B225103F1C7D615100445321 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = B22510231C7D615100445321;
+					};
+				};
+			};
+			buildConfigurationList = B225101F1C7D615100445321 /* Build configuration list for PBXProject "TVOSSlideViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B225101B1C7D615100445321;
+			productRefGroup = B22510251C7D615100445321 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B22510231C7D615100445321 /* TVOSSlideViewController */,
+				B22510341C7D615100445321 /* TVOSSlideViewControllerTests */,
+				B225103F1C7D615100445321 /* TVOSSlideViewControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B22510221C7D615100445321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22510601C7D627F00445321 /* Assets.xcassets in Resources */,
+				B22510611C7D627F00445321 /* Main.storyboard in Resources */,
+				B22510621C7D627F00445321 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22510331C7D615100445321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B225103E1C7D615100445321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B22510201C7D615100445321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22510631C7D627F00445321 /* TVOSSlideViewController.swift in Sources */,
+				B225105F1C7D627F00445321 /* AppDelegate.swift in Sources */,
+				B225105E1C7D627F00445321 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22510311C7D615100445321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B225103A1C7D615100445321 /* TVOSSlideViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B225103C1C7D615100445321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22510451C7D615100445321 /* TVOSSlideViewControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B22510371C7D615100445321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B22510231C7D615100445321 /* TVOSSlideViewController */;
+			targetProxy = B22510361C7D615100445321 /* PBXContainerItemProxy */;
+		};
+		B22510421C7D615100445321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B22510231C7D615100445321 /* TVOSSlideViewController */;
+			targetProxy = B22510411C7D615100445321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B22510591C7D627F00445321 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B225105A1C7D627F00445321 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B22510471C7D615100445321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		B22510481C7D615100445321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B225104A1C7D615100445321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/TVOSSlideViewController/SupportingFiles/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSSlideViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B225104B1C7D615100445321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/TVOSSlideViewController/SupportingFiles/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSSlideViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B225104D1C7D615100445321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TVOSSlideViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSSlideViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVOSSlideViewController.app/TVOSSlideViewController";
+			};
+			name = Debug;
+		};
+		B225104E1C7D615100445321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TVOSSlideViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSSlideViewControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVOSSlideViewController.app/TVOSSlideViewController";
+			};
+			name = Release;
+		};
+		B22510501C7D615100445321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TVOSSlideViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSSlideViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TVOSSlideViewController;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B22510511C7D615100445321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TVOSSlideViewControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSSlideViewControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TVOSSlideViewController;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B225101F1C7D615100445321 /* Build configuration list for PBXProject "TVOSSlideViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B22510471C7D615100445321 /* Debug */,
+				B22510481C7D615100445321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B22510491C7D615100445321 /* Build configuration list for PBXNativeTarget "TVOSSlideViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B225104A1C7D615100445321 /* Debug */,
+				B225104B1C7D615100445321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B225104C1C7D615100445321 /* Build configuration list for PBXNativeTarget "TVOSSlideViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B225104D1C7D615100445321 /* Debug */,
+				B225104E1C7D615100445321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B225104F1C7D615100445321 /* Build configuration list for PBXNativeTarget "TVOSSlideViewControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B22510501C7D615100445321 /* Debug */,
+				B22510511C7D615100445321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B225101C1C7D615100445321 /* Project object */;
+}

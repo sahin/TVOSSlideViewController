@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--DemoSlidingViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="DemoSlidingViewController" customClass="ViewController" customModule="TVOSSlideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACm-Ng-4aj" userLabel="LeftView">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="1080"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-SR-oH3">
+                                        <rect key="frame" x="20" y="20" width="360" height="1040"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="13o-Xu-tvL"/>
+                                    <constraint firstItem="OPB-SR-oH3" firstAttribute="top" secondItem="ACm-Ng-4aj" secondAttribute="top" constant="20" id="ad3-8F-FKr"/>
+                                    <constraint firstItem="OPB-SR-oH3" firstAttribute="leading" secondItem="ACm-Ng-4aj" secondAttribute="leading" constant="20" id="gOs-Ih-vXQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="OPB-SR-oH3" secondAttribute="trailing" constant="20" id="l2b-CK-RQr"/>
+                                    <constraint firstAttribute="bottom" secondItem="OPB-SR-oH3" secondAttribute="bottom" constant="20" id="xcD-6f-rrM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjh-ig-cMW" userLabel="RightView">
+                                <rect key="frame" x="1520" y="0.0" width="400" height="1080"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljp-r3-DEV">
+                                        <rect key="frame" x="20" y="20" width="360" height="1040"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ljp-r3-DEV" firstAttribute="top" secondItem="fjh-ig-cMW" secondAttribute="top" constant="20" id="2uq-c5-Yz5"/>
+                                    <constraint firstAttribute="bottom" secondItem="ljp-r3-DEV" secondAttribute="bottom" constant="20" id="ZIP-ZD-h3v"/>
+                                    <constraint firstAttribute="trailing" secondItem="ljp-r3-DEV" secondAttribute="trailing" constant="20" id="fZn-qF-yrX"/>
+                                    <constraint firstAttribute="width" constant="400" id="pzl-xA-3MX"/>
+                                    <constraint firstItem="ljp-r3-DEV" firstAttribute="leading" secondItem="fjh-ig-cMW" secondAttribute="leading" constant="20" id="xY6-r9-ZkE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fjh-ig-cMW" secondAttribute="bottom" id="0ho-68-ftP"/>
+                            <constraint firstAttribute="trailing" secondItem="fjh-ig-cMW" secondAttribute="trailing" id="9Tf-P0-Snd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ACm-Ng-4aj" secondAttribute="bottom" id="EDK-KG-6ee"/>
+                            <constraint firstItem="ACm-Ng-4aj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WOL-52-2q4"/>
+                            <constraint firstItem="fjh-ig-cMW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="kIP-kO-1Y8"/>
+                            <constraint firstItem="ACm-Ng-4aj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xGI-uM-Gd1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leftView" destination="ACm-Ng-4aj" id="Nxa-oY-aC9"/>
+                        <outlet property="rightView" destination="fjh-ig-cMW" id="fOD-UE-kE7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--DemoContentViewController-->
+        <scene sceneID="P5H-U5-51C">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="v25-M0-0Zv" userLabel="DemoContentViewController" customClass="DemoContentViewController" customModule="TVOSSlideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pey-84-mot"/>
+                        <viewControllerLayoutGuide type="bottom" id="090-xv-yXi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QiA-Y1-K8h">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="still" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-j1-JCU">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="090-xv-yXi" firstAttribute="top" secondItem="Cnf-j1-JCU" secondAttribute="bottom" id="bCq-He-LCy"/>
+                            <constraint firstItem="Cnf-j1-JCU" firstAttribute="top" secondItem="pey-84-mot" secondAttribute="bottom" id="fIX-b7-i2l"/>
+                            <constraint firstItem="Cnf-j1-JCU" firstAttribute="leading" secondItem="QiA-Y1-K8h" secondAttribute="leading" id="wNh-jJ-NVf"/>
+                            <constraint firstAttribute="trailing" secondItem="Cnf-j1-JCU" secondAttribute="trailing" id="ydV-U0-nBf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZV-b6-q33" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="1760"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="still" width="2000" height="1011"/>
+    </resources>
+</document>
