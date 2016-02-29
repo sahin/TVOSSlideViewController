@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TVOSSlideViewController"
-  s.version      = "0.2"
+  s.version      = "0.3"
   s.summary      = "Container view controller with left and right drawer controlling by pan gesture for tvOS."
 
   # This description is used to generate tags and improve search results.
@@ -47,11 +47,11 @@ Demo
 
 #### `shrinks = false`
 
-![alt tag](https://raw.githubusercontent.com/cemolcay/TVOSSlideViewController/master/demo.gif)
+![alt tag](https://raw.githubusercontent.com/movielala/TVOSSlideViewController/master/demo.gif)
 
 #### `shrinks = true`
 
-![alt tag](https://raw.githubusercontent.com/cemolcay/TVOSSlideViewController/master/shrink.gif)
+![alt tag](https://raw.githubusercontent.com/movielala/TVOSSlideViewController/master/shrink.gif)
 
 Install
 ----
@@ -101,7 +101,7 @@ optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSS
 ```
                    DESC
 
-  s.homepage     = "https://github.com/cemolcay/TVOSSlideViewController"
+  s.homepage     = "https://github.com/movielala/TVOSSlideViewController"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -153,7 +153,7 @@ optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSS
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/cemolcay/TVOSSlideViewController.git", :tag => "v0.2" }
+  s.source       = { :git => "https://github.com/movielala/TVOSSlideViewController.git", :tag => "v0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
