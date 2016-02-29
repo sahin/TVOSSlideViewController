@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TVOSSlideViewController"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "Container view controller with left and right drawer controlling by pan gesture for tvOS."
 
   # This description is used to generate tags and improve search results.
@@ -153,7 +153,7 @@ optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSS
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/cemolcay/TVOSSlideViewController.git", :tag => "v0.1" }
+  s.source       = { :git => "https://github.com/cemolcay/TVOSSlideViewController.git", :tag => "v0.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -164,8 +164,7 @@ optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSS
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "TVOSSlideViewController/TVOSSlideViewController/*.swift"
-
+  s.source_files  = "TVOSSlideViewController/TVOSSlideViewController"
   # s.public_header_files = "Classes/**/*.h"
 
 
