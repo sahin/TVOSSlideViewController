@@ -19,11 +19,11 @@ Demo
 
 #### `shrinks = false`
 
-![alt tag]()
+![alt tag](https://raw.githubusercontent.com/cemolcay/TVOSSlideViewController/master/demo.gif)
 
 #### `shrinks = true`
 
-![alt tag]()
+![alt tag](https://raw.githubusercontent.com/cemolcay/TVOSSlideViewController/master/shrink.gif)
 
 Install
 ----
