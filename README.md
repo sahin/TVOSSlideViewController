@@ -1,7 +1,8 @@
 TVOSSlideViewController
 ===
 
-tvOS container view controller inspired by the [zova](http://get.zova.com/) tvos app.
+Container view controller with left and right drawer controlling by pan gesture for tvOS.  
+inspired by the [zova](http://get.zova.com/) tvos app.
 
 Features
 ----
