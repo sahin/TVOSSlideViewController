@@ -72,3 +72,6 @@ TVOSSlideViewControllerDelegate
   optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSSlideViewController)
 }
 ```
+
+### Authors
+* [Cem Olcay](https://github.com/cemolcay)
