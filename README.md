@@ -39,7 +39,7 @@ Usage
 
 #### Storyboard
 
-* You need to subclass `TVOSSlideViewController` and set your view controller instantce's class to your subclass.
+* You need to subclass `TVOSSlideViewController` and set your view controller instantce's class to your subclass in IB.
 * Customise `TVOSSlideViewController`s `@IBInspectable` properties in interface builder without touching code
 * call `setup(contentViewController:)` function in your subclass for setup content view.
 * You can inject whatever you want as content.
