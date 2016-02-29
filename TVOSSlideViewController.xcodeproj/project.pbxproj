@@ -14,7 +14,7 @@
 		B22510601C7D627F00445321 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22510581C7D627F00445321 /* Assets.xcassets */; };
 		B22510611C7D627F00445321 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22510591C7D627F00445321 /* Main.storyboard */; };
 		B22510621C7D627F00445321 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B225105B1C7D627F00445321 /* Info.plist */; };
-		B22510631C7D627F00445321 /* TVOSSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B225105D1C7D627F00445321 /* TVOSSlideViewController.swift */; };
+		B2796BAA1C84E5E1005B0585 /* TVOSSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2796BA91C84E5E1005B0585 /* TVOSSlideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		B22510581C7D627F00445321 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B225105A1C7D627F00445321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B225105B1C7D627F00445321 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B225105D1C7D627F00445321 /* TVOSSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSSlideViewController.swift; sourceTree = "<group>"; };
+		B2796BA91C84E5E1005B0585 /* TVOSSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSSlideViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		B22510261C7D615100445321 /* TVOSSlideViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B225105C1C7D627F00445321 /* TVOSSlideViewConroller */,
+				B2796BA81C84E5E1005B0585 /* TVOSSlideViewController */,
 				B22510541C7D627F00445321 /* Demo */,
 				B22510561C7D627F00445321 /* SupportingFiles */,
 			);
@@ -150,12 +150,12 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		B225105C1C7D627F00445321 /* TVOSSlideViewConroller */ = {
+		B2796BA81C84E5E1005B0585 /* TVOSSlideViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B225105D1C7D627F00445321 /* TVOSSlideViewController.swift */,
+				B2796BA91C84E5E1005B0585 /* TVOSSlideViewController.swift */,
 			);
-			path = TVOSSlideViewConroller;
+			path = TVOSSlideViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22510631C7D627F00445321 /* TVOSSlideViewController.swift in Sources */,
+				B2796BAA1C84E5E1005B0585 /* TVOSSlideViewController.swift in Sources */,
 				B225105F1C7D627F00445321 /* AppDelegate.swift in Sources */,
 				B225105E1C7D627F00445321 /* ViewController.swift in Sources */,
 			);
