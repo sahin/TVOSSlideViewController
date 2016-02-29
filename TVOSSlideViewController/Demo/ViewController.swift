@@ -8,22 +8,30 @@
 
 import UIKit
 
-class DemoContentViewController: UIViewController {
-  @IBOutlet var leftLabel: UILabel!
-  @IBOutlet var rightLabel: UILabel!
-}
-
 class ViewController: TVOSSlideViewController {
 
-  var contentViewController: DemoContentViewController?
+  var drawerAnimation: CABasicAnimation {
+    let anim = CABasicAnimation(keyPath: "backgroundColor")
+    anim.fromValue = UIColor.whiteColor().CGColor
+    anim.toValue = UIColor.grayColor().CGColor
+    anim.duration = 1
+    return anim
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     delegate = self
-    if let contentViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ContentViewController") as? DemoContentViewController {
-      self.contentViewController = contentViewController
-      setup(contentViewController: contentViewController)
-    }
+
+    // left and right drawer animations
+    leftView?.layer.addAnimation(drawerAnimation, forKey: "drawerAnimation")
+    rightView?.layer.addAnimation(drawerAnimation, forKey: "drawerAnimation")
+    leftView?.layer.speed = 0
+    rightView?.layer.speed = 0
+
+    // content view controller
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let contentViewController = storyboard.instantiateViewControllerWithIdentifier("ContentViewController")
+    setup(contentViewController: contentViewController)
   }
 }
 
@@ -39,10 +47,12 @@ extension ViewController: TVOSSlideViewControllerDelegate {
 
   func slideViewControllerDidUpdateLeftDrawer(amount: CGFloat) {
     print(__FUNCTION__)
+    leftView?.layer.timeOffset = CFTimeInterval(amount)
   }
 
   func slideViewControllerDidUpdateRightDrawer(amount: CGFloat) {
     print(__FUNCTION__)
+    rightView?.layer.timeOffset = CFTimeInterval(amount)
   }
 
   func slideViewControllerDidEndUpdateLeftDrawer(amount: CGFloat) {

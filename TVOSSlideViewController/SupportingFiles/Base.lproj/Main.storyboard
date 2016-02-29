@@ -65,6 +65,9 @@
                             <constraint firstItem="ACm-Ng-4aj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xGI-uM-Gd1"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="shrinks" value="NO"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="leftView" destination="ACm-Ng-4aj" id="Nxa-oY-aC9"/>
                         <outlet property="rightView" destination="fjh-ig-cMW" id="fOD-UE-kE7"/>
@@ -76,7 +79,7 @@
         <!--DemoContentViewController-->
         <scene sceneID="P5H-U5-51C">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" id="v25-M0-0Zv" userLabel="DemoContentViewController" customClass="DemoContentViewController" customModule="TVOSSlideViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" id="v25-M0-0Zv" userLabel="DemoContentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pey-84-mot"/>
                         <viewControllerLayoutGuide type="bottom" id="090-xv-yXi"/>
@@ -100,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZV-b6-q33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="1760"/>
+            <point key="canvasLocation" x="493" y="1535"/>
         </scene>
     </scenes>
     <resources>

@@ -9,14 +9,14 @@
 import UIKit
 
 @objc public protocol TVOSSlideViewControllerDelegate {
-  optional func slideViewControllerDidBeginUpdateLeftDrawer()
-  optional func slideViewControllerDidBeginUpdateRightDrawer()
-  optional func slideViewControllerDidUpdateLeftDrawer(amount: CGFloat)
-  optional func slideViewControllerDidUpdateRightDrawer(amount: CGFloat)
-  optional func slideViewControllerDidEndUpdateLeftDrawer(amount: CGFloat)
-  optional func slideViewControllerDidEndUpdateRightDrawer(amount: CGFloat)
-  optional func slideViewControllerDidSelectLeftDrawer()
-  optional func slideViewControllerDidSelectRightDrawer()
+  optional func slideViewControllerDidBeginUpdateLeftDrawer(slideViewController: TVOSSlideViewController)
+  optional func slideViewControllerDidBeginUpdateRightDrawer(slideViewController: TVOSSlideViewController)
+  optional func slideViewControllerDidUpdateLeftDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat)
+  optional func slideViewControllerDidUpdateRightDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat)
+  optional func slideViewControllerDidEndUpdateLeftDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat)
+  optional func slideViewControllerDidEndUpdateRightDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat)
+  optional func slideViewControllerDidSelectLeftDrawer(slideViewController: TVOSSlideViewController)
+  optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSSlideViewController)
 }
 
 public enum TVOSSlideViewControllerType {
@@ -51,8 +51,9 @@ public class TVOSSlideViewController: UIViewController {
   private var rightConstraint: NSLayoutConstraint?
 
   private(set) var type: TVOSSlideViewControllerType = .NoDrawer
-  weak var delegate: TVOSSlideViewControllerDelegate?
-  var panGestureRecognizer: UIPanGestureRecognizer!
+  internal var panGestureRecognizer: UIPanGestureRecognizer!
+
+  public weak var delegate: TVOSSlideViewControllerDelegate?
 
   // MARK: Init
 
@@ -82,7 +83,16 @@ public class TVOSSlideViewController: UIViewController {
       type = .LeftRightDrawer
     }
 
+    // reset child view controllers
+    for child in childViewControllers {
+      child.removeFromParentViewController()
+      child.didMoveToParentViewController(nil)
+    }
+
     // content view
+    if contentView != nil {
+      contentView.removeFromSuperview()
+    }
     contentView = UIView()
     contentView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(contentView)
@@ -229,14 +239,14 @@ public class TVOSSlideViewController: UIViewController {
 
     switch state {
     case .Began:
-      delegate?.slideViewControllerDidBeginUpdateLeftDrawer?()
+      delegate?.slideViewControllerDidBeginUpdateLeftDrawer?(self)
     case .Changed:
-      delegate?.slideViewControllerDidUpdateLeftDrawer?(amount)
+      delegate?.slideViewControllerDidUpdateLeftDrawer?(self, amount: amount)
     case .Cancelled, .Ended, .Failed:
       if amount >= 1.0 - leftTrashold {
-        delegate?.slideViewControllerDidSelectLeftDrawer?()
+        delegate?.slideViewControllerDidSelectLeftDrawer?(self)
       } else {
-        delegate?.slideViewControllerDidEndUpdateLeftDrawer?(amount)
+        delegate?.slideViewControllerDidEndUpdateLeftDrawer?(self, amount: amount)
       }
     default:
       break
@@ -253,14 +263,14 @@ public class TVOSSlideViewController: UIViewController {
 
     switch state {
     case .Began:
-      delegate?.slideViewControllerDidBeginUpdateRightDrawer?()
+      delegate?.slideViewControllerDidBeginUpdateRightDrawer?(self)
     case .Changed:
-      delegate?.slideViewControllerDidUpdateRightDrawer?(amount)
+      delegate?.slideViewControllerDidUpdateRightDrawer?(self, amount: amount)
     case .Cancelled, .Ended, .Failed:
       if amount >= 1.0 - rightTrashold {
-        delegate?.slideViewControllerDidSelectRightDrawer?()
+        delegate?.slideViewControllerDidSelectRightDrawer?(self)
       } else {
-        delegate?.slideViewControllerDidEndUpdateRightDrawer?(amount)
+        delegate?.slideViewControllerDidEndUpdateRightDrawer?(self, amount: amount)
       }
     default:
       break
