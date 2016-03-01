@@ -66,7 +66,8 @@
                         </constraints>
                     </view>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="shrinks" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="shrinks" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="parallax" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="leftView" destination="ACm-Ng-4aj" id="Nxa-oY-aC9"/>
