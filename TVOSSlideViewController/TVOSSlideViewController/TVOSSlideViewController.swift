@@ -47,6 +47,9 @@ public class TVOSSlideViewController: UIViewController {
   // animate contentView autolayout enabled or not
   @IBInspectable var shrinks: Bool = false
 
+  // center horizontally content for parallax effect
+  @IBInspectable var parallax: Bool = false
+
   private var leftConstraint: NSLayoutConstraint?
   private var rightConstraint: NSLayoutConstraint?
 
@@ -95,6 +98,7 @@ public class TVOSSlideViewController: UIViewController {
     }
     contentView = UIView()
     contentView.translatesAutoresizingMaskIntoConstraints = false
+    contentView.layer.masksToBounds = true
     view.addSubview(contentView)
 
     let topConstraint = NSLayoutConstraint(
@@ -141,40 +145,79 @@ public class TVOSSlideViewController: UIViewController {
       contentView.addSubview(contentViewController.view)
       contentViewController.view.translatesAutoresizingMaskIntoConstraints = false
 
+      if parallax {
+        shrinks = true
+        contentView.addConstraints([
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Top,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: contentView,
+            attribute: NSLayoutAttribute.Top,
+            multiplier: 1,
+            constant: 0),
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Bottom,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: contentView,
+            attribute: NSLayoutAttribute.Bottom,
+            multiplier: 1,
+            constant: 0),
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.CenterX,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: contentView,
+            attribute: NSLayoutAttribute.CenterX,
+            multiplier: 1,
+            constant: 0),
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Width,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1,
+            constant: contentViewController.view.frame.size.width)
+          ])
+
+      } else {
       contentView.addConstraints([
-        NSLayoutConstraint(
-          item: contentViewController.view,
-          attribute: NSLayoutAttribute.Top, 
-          relatedBy: NSLayoutRelation.Equal, 
-          toItem: contentView,
-          attribute: NSLayoutAttribute.Top, 
-          multiplier: 1, 
-          constant: 0),
-        NSLayoutConstraint(
-          item: contentViewController.view,
-          attribute: NSLayoutAttribute.Bottom,
-          relatedBy: NSLayoutRelation.Equal,
-          toItem: contentView,
-          attribute: NSLayoutAttribute.Bottom,
-          multiplier: 1,
-          constant: 0),
-        NSLayoutConstraint(
-          item: contentViewController.view,
-          attribute: NSLayoutAttribute.Leading,
-          relatedBy: NSLayoutRelation.Equal,
-          toItem: contentView,
-          attribute: NSLayoutAttribute.Leading,
-          multiplier: 1,
-          constant: 0),
-        NSLayoutConstraint(
-          item: contentViewController.view,
-          attribute: NSLayoutAttribute.Trailing,
-          relatedBy: NSLayoutRelation.Equal,
-          toItem: contentView,
-          attribute: NSLayoutAttribute.Trailing,
-          multiplier: 1,
-          constant: 0)
-      ])
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Top, 
+            relatedBy: NSLayoutRelation.Equal, 
+            toItem: contentView,
+            attribute: NSLayoutAttribute.Top, 
+            multiplier: 1, 
+            constant: 0),
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Bottom,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: contentView,
+            attribute: NSLayoutAttribute.Bottom,
+            multiplier: 1,
+            constant: 0),
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Leading,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: contentView,
+            attribute: NSLayoutAttribute.Leading,
+            multiplier: 1,
+            constant: 0),
+          NSLayoutConstraint(
+            item: contentViewController.view,
+            attribute: NSLayoutAttribute.Trailing,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: contentView,
+            attribute: NSLayoutAttribute.Trailing,
+            multiplier: 1,
+            constant: 0)
+        ])
+      }
 
       addChildViewController(contentViewController)
       contentViewController.didMoveToParentViewController(self)
