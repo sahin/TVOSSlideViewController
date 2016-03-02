@@ -26,6 +26,10 @@ Demo
 
 ![alt tag](https://raw.githubusercontent.com/movielala/TVOSSlideViewController/master/shrink.gif)
 
+#### `parallax = true`
+
+![alt tag](https://raw.githubusercontent.com/movielala/TVOSSlideViewController/master/parallax.gif)
+
 Install
 ----
 
@@ -72,6 +76,13 @@ TVOSSlideViewControllerDelegate
   optional func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSSlideViewController)
 }
 ```
+
+TVOSSlideViewControllerShadow
+----
+
+* Set it up in interface builder with draggin and dropping `object template` to your `TVOSSlideViewController` instance.
+* Since `TVOSSlideViewControllerShadow` is a `@IBDesignable` object, you can set it properties directly from storyboard
+* Programmatically you can set `shadow` property values.
 
 ### Authors
 * [Cem Olcay](https://github.com/cemolcay)

@@ -27,36 +27,79 @@ public enum TVOSSlideViewControllerType {
 }
 
 @IBDesignable
+public class TVOSSlideViewControllerShadow: NSObject {
+  @IBInspectable public var color: UIColor = UIColor.blackColor()
+  @IBInspectable public var opacity: CGFloat = 0.5
+  @IBInspectable public var radius: CGFloat =  50
+  @IBInspectable public var offset: CGSize = CGSize.zero
+  @IBInspectable public var cornerRadius: CGFloat = 0
+
+  public static var Empty: TVOSSlideViewControllerShadow {
+    let shadow = TVOSSlideViewControllerShadow()
+    shadow.color = UIColor.clearColor()
+    shadow.opacity = 0
+    shadow.radius = 0
+    shadow.offset = CGSize.zero
+    return shadow
+  }
+
+  public func apply(onLayer layer: CALayer?) {
+    if let layer = layer {
+      layer.shadowColor = color.CGColor
+      layer.shadowOffset = offset
+      layer.shadowRadius = radius
+      layer.shadowOpacity = Float(opacity)
+      layer.shadowPath = UIBezierPath(
+        roundedRect: CGRect(x: 0, y: 0, width: layer.frame.size.width, height: layer.frame.size.height),
+        cornerRadius: cornerRadius)
+        .CGPath
+    }
+  }
+}
+
+@IBDesignable
 public class TVOSSlideViewController: UIViewController {
 
   // MARK: Properties
 
   private var contentView: UIView!
+  private var contentViewShadow: UIView?
 
-  @IBOutlet var leftView: UIView?
-  @IBOutlet var rightView: UIView?
+  @IBOutlet public var leftView: UIView?
+  @IBOutlet public var rightView: UIView?
 
   // max value for selection
-  @IBInspectable var leftValue: CGFloat = 400
-  @IBInspectable var rightValue: CGFloat = 400
+  @IBInspectable public var leftValue: CGFloat = 400
+  @IBInspectable public var rightValue: CGFloat = 400
 
   // if amount >= value - trashold than selected
-  @IBInspectable var rightTrashold: CGFloat = 0.1
-  @IBInspectable var leftTrashold: CGFloat = 0.1
+  @IBInspectable public var rightTrashold: CGFloat = 0.1
+  @IBInspectable public var leftTrashold: CGFloat = 0.1
 
   // animate contentView autolayout enabled or not
-  @IBInspectable var shrinks: Bool = false
+  @IBInspectable public var shrinks: Bool = false
 
   // center horizontally content for parallax effect
-  @IBInspectable var parallax: Bool = false
+  @IBInspectable public var parallax: Bool = false
+
+  // shadow style
+  @IBOutlet public var shadow: TVOSSlideViewControllerShadow? {
+    didSet {
+      if let shadow = shadow {
+        shadow.apply(onLayer: contentViewShadow?.layer)
+      } else {
+        TVOSSlideViewControllerShadow.Empty.apply(onLayer: contentViewShadow?.layer)
+      }
+    }
+  }
 
   private var leftConstraint: NSLayoutConstraint?
   private var rightConstraint: NSLayoutConstraint?
 
+  public weak var delegate: TVOSSlideViewControllerDelegate?
+  
   private(set) var type: TVOSSlideViewControllerType = .NoDrawer
   internal var panGestureRecognizer: UIPanGestureRecognizer!
-
-  public weak var delegate: TVOSSlideViewControllerDelegate?
 
   // MARK: Init
 
@@ -140,6 +183,60 @@ public class TVOSSlideViewController: UIViewController {
       leftConstraint!, 
       rightConstraint!])
 
+    // content view shadow
+    contentViewShadow?.removeFromSuperview()
+    contentViewShadow = nil
+    if let shadow = shadow {
+      let shadowView = UIView()
+      shadowView.backgroundColor = UIColor.clearColor()
+      shadowView.translatesAutoresizingMaskIntoConstraints = false
+      shadowView.userInteractionEnabled = false
+      shadowView.layer.masksToBounds = false
+      view.addSubview(shadowView)
+      view.addSubview(contentView)
+
+      // shadow constraints
+      view.addConstraints([
+        NSLayoutConstraint(
+          item: shadowView,
+          attribute: NSLayoutAttribute.Top,
+          relatedBy: NSLayoutRelation.Equal,
+          toItem: contentView,
+          attribute: NSLayoutAttribute.Top,
+          multiplier: 1,
+          constant: 0),
+        NSLayoutConstraint(
+          item: shadowView,
+          attribute: NSLayoutAttribute.Bottom,
+          relatedBy: NSLayoutRelation.Equal,
+          toItem: contentView,
+          attribute: NSLayoutAttribute.Bottom,
+          multiplier: 1,
+          constant: 0),
+        NSLayoutConstraint(
+          item: shadowView,
+          attribute: NSLayoutAttribute.Leading,
+          relatedBy: NSLayoutRelation.Equal,
+          toItem: contentView,
+          attribute: NSLayoutAttribute.Leading,
+          multiplier: 1,
+          constant: 0),
+        NSLayoutConstraint(
+          item: shadowView,
+          attribute: NSLayoutAttribute.Trailing,
+          relatedBy: NSLayoutRelation.Equal,
+          toItem: contentView,
+          attribute: NSLayoutAttribute.Trailing,
+          multiplier: 1,
+          constant: 0)
+      ])
+
+      contentViewShadow = shadowView
+      shadow.apply(onLayer: contentViewShadow?.layer)
+    } else {
+      TVOSSlideViewControllerShadow.Empty.apply(onLayer: contentViewShadow?.layer)
+    }
+
     // content view controller
     if let contentViewController = contentVC {
       contentView.addSubview(contentViewController.view)
@@ -181,7 +278,6 @@ public class TVOSSlideViewController: UIViewController {
             multiplier: 1,
             constant: contentViewController.view.frame.size.width)
           ])
-
       } else {
       contentView.addConstraints([
           NSLayoutConstraint(
@@ -231,7 +327,15 @@ public class TVOSSlideViewController: UIViewController {
     contentView.addGestureRecognizer(panGestureRecognizer)
   }
 
-  // MARK: State
+  // MARK: Pan Gesture Recognizer
+
+  public func enablePanGestureRecognizer() {
+    panGestureRecognizer.enabled = true
+  }
+
+  public func disablePanGestureRecognizer() {
+    panGestureRecognizer.enabled = false
+  }
 
   internal func panGestureDidChange(pan: UIPanGestureRecognizer) {
     if pan == panGestureRecognizer {
@@ -255,20 +359,16 @@ public class TVOSSlideViewController: UIViewController {
       case .NoDrawer:
         break
       }
-
-      switch pan.state {
-      case .Ended, .Failed, .Cancelled:
-        resetConstraints()
-      default:
-        return
-      }
     }
   }
+
+  // MARK: Update
 
   private func resetConstraints() {
     view.layoutIfNeeded()
     leftConstraint?.constant = 0
     rightConstraint?.constant = 0
+    shadow?.apply(onLayer: contentViewShadow?.layer)
     UIView.animateWithDuration(0.2, animations: view.layoutIfNeeded)
   }
 
@@ -278,6 +378,7 @@ public class TVOSSlideViewController: UIViewController {
     view.layoutIfNeeded()
     leftConstraint?.constant = leftValue * amount
     rightConstraint?.constant = shrinks ? 0 : leftValue * amount
+    shadow?.apply(onLayer: contentViewShadow?.layer)
     UIView.animateWithDuration(0.1, animations: view.layoutIfNeeded)
 
     switch state {
@@ -286,6 +387,7 @@ public class TVOSSlideViewController: UIViewController {
     case .Changed:
       delegate?.slideViewControllerDidUpdateLeftDrawer?(self, amount: amount)
     case .Cancelled, .Ended, .Failed:
+      resetConstraints()
       if amount >= 1.0 - leftTrashold {
         delegate?.slideViewControllerDidSelectLeftDrawer?(self)
       } else {
@@ -302,6 +404,7 @@ public class TVOSSlideViewController: UIViewController {
     view.layoutIfNeeded()
     rightConstraint?.constant = -rightValue * amount
     leftConstraint?.constant = shrinks ? 0 : -rightValue * amount
+    shadow?.apply(onLayer: contentViewShadow?.layer)
     UIView.animateWithDuration(0.1, animations: view.layoutIfNeeded)
 
     switch state {
@@ -310,6 +413,7 @@ public class TVOSSlideViewController: UIViewController {
     case .Changed:
       delegate?.slideViewControllerDidUpdateRightDrawer?(self, amount: amount)
     case .Cancelled, .Ended, .Failed:
+      resetConstraints()
       if amount >= 1.0 - rightTrashold {
         delegate?.slideViewControllerDidSelectRightDrawer?(self)
       } else {
