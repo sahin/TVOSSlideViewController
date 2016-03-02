@@ -72,9 +72,26 @@
                     <connections>
                         <outlet property="leftView" destination="ACm-Ng-4aj" id="Nxa-oY-aC9"/>
                         <outlet property="rightView" destination="fjh-ig-cMW" id="fOD-UE-kE7"/>
+                        <outlet property="shadow" destination="4Jg-Z2-kpn" id="2cq-d8-lk0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="4Jg-Z2-kpn" userLabel="Shadow" customClass="TVOSSlideViewControllerShadow" customModule="TVOSSlideViewController" customModuleProvider="target">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="offset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
         </scene>
         <!--DemoContentViewController-->
