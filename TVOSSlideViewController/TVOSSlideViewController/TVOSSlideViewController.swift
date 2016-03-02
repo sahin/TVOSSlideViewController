@@ -28,13 +28,13 @@ public enum TVOSSlideViewControllerType {
 
 @IBDesignable
 public class TVOSSlideViewControllerShadow: NSObject {
-  @IBInspectable var color: UIColor = UIColor.blackColor()
-  @IBInspectable var opacity: CGFloat = 0.5
-  @IBInspectable var radius: CGFloat =  50
-  @IBInspectable var offset: CGSize = CGSize.zero
-  @IBInspectable var cornerRadius: CGFloat = 0
+  @IBInspectable public var color: UIColor = UIColor.blackColor()
+  @IBInspectable public var opacity: CGFloat = 0.5
+  @IBInspectable public var radius: CGFloat =  50
+  @IBInspectable public var offset: CGSize = CGSize.zero
+  @IBInspectable public var cornerRadius: CGFloat = 0
 
-  static var Empty: TVOSSlideViewControllerShadow {
+  public static var Empty: TVOSSlideViewControllerShadow {
     let shadow = TVOSSlideViewControllerShadow()
     shadow.color = UIColor.clearColor()
     shadow.opacity = 0
@@ -43,7 +43,7 @@ public class TVOSSlideViewControllerShadow: NSObject {
     return shadow
   }
 
-  func apply(onLayer layer: CALayer?) {
+  public func apply(onLayer layer: CALayer?) {
     if let layer = layer {
       layer.shadowColor = color.CGColor
       layer.shadowOffset = offset
@@ -65,25 +65,25 @@ public class TVOSSlideViewController: UIViewController {
   private var contentView: UIView!
   private var contentViewShadow: UIView?
 
-  @IBOutlet var leftView: UIView?
-  @IBOutlet var rightView: UIView?
+  @IBOutlet public var leftView: UIView?
+  @IBOutlet public var rightView: UIView?
 
   // max value for selection
-  @IBInspectable var leftValue: CGFloat = 400
-  @IBInspectable var rightValue: CGFloat = 400
+  @IBInspectable public var leftValue: CGFloat = 400
+  @IBInspectable public var rightValue: CGFloat = 400
 
   // if amount >= value - trashold than selected
-  @IBInspectable var rightTrashold: CGFloat = 0.1
-  @IBInspectable var leftTrashold: CGFloat = 0.1
+  @IBInspectable public var rightTrashold: CGFloat = 0.1
+  @IBInspectable public var leftTrashold: CGFloat = 0.1
 
   // animate contentView autolayout enabled or not
-  @IBInspectable var shrinks: Bool = false
+  @IBInspectable public var shrinks: Bool = false
 
   // center horizontally content for parallax effect
-  @IBInspectable var parallax: Bool = false
+  @IBInspectable public var parallax: Bool = false
 
   // shadow style
-  @IBOutlet var shadow: TVOSSlideViewControllerShadow? {
+  @IBOutlet public var shadow: TVOSSlideViewControllerShadow? {
     didSet {
       if let shadow = shadow {
         shadow.apply(onLayer: contentViewShadow?.layer)
@@ -188,10 +188,12 @@ public class TVOSSlideViewController: UIViewController {
     contentViewShadow = nil
     if let shadow = shadow {
       let shadowView = UIView()
+      shadowView.backgroundColor = UIColor.clearColor()
       shadowView.translatesAutoresizingMaskIntoConstraints = false
       shadowView.userInteractionEnabled = false
       shadowView.layer.masksToBounds = false
-      view.insertSubview(shadowView, belowSubview: contentView)
+      view.addSubview(shadowView)
+      view.addSubview(contentView)
 
       // shadow constraints
       view.addConstraints([
@@ -325,7 +327,15 @@ public class TVOSSlideViewController: UIViewController {
     contentView.addGestureRecognizer(panGestureRecognizer)
   }
 
-  // MARK: State
+  // MARK: Pan Gesture Recognizer
+
+  public func enablePanGestureRecognizer() {
+    panGestureRecognizer.enabled = true
+  }
+
+  public func disablePanGestureRecognizer() {
+    panGestureRecognizer.enabled = false
+  }
 
   internal func panGestureDidChange(pan: UIPanGestureRecognizer) {
     if pan == panGestureRecognizer {
@@ -355,6 +365,8 @@ public class TVOSSlideViewController: UIViewController {
       }
     }
   }
+
+  // MARK: Update
 
   private func resetConstraints() {
     view.layoutIfNeeded()
