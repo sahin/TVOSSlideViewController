@@ -10,10 +10,12 @@ Features
 * Optional left and/or right drawers.
 * Customisable slide range.
 * Customisable trashold for select state.
+* Customisable shadow.
 * Storyboard support.
 * Autolayout support.
 * Setup trough the code without storyboard.
 * Shrinks content
+* Parallax
 
 Demo
 ----
