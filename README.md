@@ -90,5 +90,5 @@ TVOSSlideViewControllerShadow
 * [Cem Olcay](https://github.com/cemolcay)
 
 ### Other tvOS projects
-* https://github.com/movielala/TVOSButton
-* https://github.com/movielala/TVOSToast
+* [TVOSButton](https://github.com/movielala/TVOSButton)
+* [TVOSToast](https://github.com/movielala/TVOSToast)
