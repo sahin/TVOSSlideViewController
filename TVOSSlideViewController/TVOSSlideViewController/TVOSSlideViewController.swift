@@ -96,10 +96,10 @@ public class TVOSSlideViewController: UIViewController {
   private var leftConstraint: NSLayoutConstraint?
   private var rightConstraint: NSLayoutConstraint?
 
+  public weak var delegate: TVOSSlideViewControllerDelegate?
+  
   private(set) var type: TVOSSlideViewControllerType = .NoDrawer
   internal var panGestureRecognizer: UIPanGestureRecognizer!
-
-  public weak var delegate: TVOSSlideViewControllerDelegate?
 
   // MARK: Init
 
@@ -359,10 +359,6 @@ public class TVOSSlideViewController: UIViewController {
       case .NoDrawer:
         break
       }
-
-      if pan.state == .Ended || pan.state == .Failed || pan.state == .Cancelled {
-        resetConstraints()
-      }
     }
   }
 
@@ -391,6 +387,7 @@ public class TVOSSlideViewController: UIViewController {
     case .Changed:
       delegate?.slideViewControllerDidUpdateLeftDrawer?(self, amount: amount)
     case .Cancelled, .Ended, .Failed:
+      resetConstraints()
       if amount >= 1.0 - leftTrashold {
         delegate?.slideViewControllerDidSelectLeftDrawer?(self)
       } else {
@@ -416,6 +413,7 @@ public class TVOSSlideViewController: UIViewController {
     case .Changed:
       delegate?.slideViewControllerDidUpdateRightDrawer?(self, amount: amount)
     case .Cancelled, .Ended, .Failed:
+      resetConstraints()
       if amount >= 1.0 - rightTrashold {
         delegate?.slideViewControllerDidSelectRightDrawer?(self)
       } else {

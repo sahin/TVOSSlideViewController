@@ -37,37 +37,37 @@ class ViewController: TVOSSlideViewController {
 
 extension ViewController: TVOSSlideViewControllerDelegate {
 
-  func slideViewControllerDidBeginUpdateLeftDrawer() {
+  func slideViewControllerDidBeginUpdateLeftDrawer(slideViewController: TVOSSlideViewController) {
     print(__FUNCTION__)
   }
 
-  func slideViewControllerDidBeginUpdateRightDrawer() {
+  func slideViewControllerDidBeginUpdateRightDrawer(slideViewController: TVOSSlideViewController) {
     print(__FUNCTION__)
   }
 
-  func slideViewControllerDidUpdateLeftDrawer(amount: CGFloat) {
+  func slideViewControllerDidUpdateLeftDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat) {
     print(__FUNCTION__)
     leftView?.layer.timeOffset = CFTimeInterval(amount)
   }
 
-  func slideViewControllerDidUpdateRightDrawer(amount: CGFloat) {
+  func slideViewControllerDidUpdateRightDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat) {
     print(__FUNCTION__)
     rightView?.layer.timeOffset = CFTimeInterval(amount)
   }
 
-  func slideViewControllerDidEndUpdateLeftDrawer(amount: CGFloat) {
+  func slideViewControllerDidSelectLeftDrawer(slideViewController: TVOSSlideViewController) {
     print(__FUNCTION__)
   }
 
-  func slideViewControllerDidEndUpdateRightDrawer(amount: CGFloat) {
+  func slideViewControllerDidSelectRightDrawer(slideViewController: TVOSSlideViewController) {
     print(__FUNCTION__)
   }
 
-  func slideViewControllerDidSelectLeftDrawer() {
+  func slideViewControllerDidEndUpdateLeftDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat) {
     print(__FUNCTION__)
   }
 
-  func slideViewControllerDidSelectRightDrawer() {
+  func slideViewControllerDidEndUpdateRightDrawer(slideViewController: TVOSSlideViewController, amount: CGFloat) {
     print(__FUNCTION__)
   }
 }
