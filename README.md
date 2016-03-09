@@ -1,4 +1,4 @@
-TVOSSlideViewController [![codebeat](https://codebeat.co/badges/b7da83af-41da-4ab3-89d9-6a376136cdb8)](https://codebeat.co/projects/github-com-movielala-tvosslideviewcontroller)
+TVOSSlideViewController
 ===
 
 Container view controller with left and right drawer controlling by pan gesture for tvOS.  
