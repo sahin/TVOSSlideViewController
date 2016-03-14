@@ -330,11 +330,11 @@ public class TVOSSlideViewController: UIViewController {
   // MARK: Pan Gesture Recognizer
 
   public func enablePanGestureRecognizer() {
-    panGestureRecognizer.enabled = true
+    panGestureRecognizer?.enabled = true
   }
 
   public func disablePanGestureRecognizer() {
-    panGestureRecognizer.enabled = false
+    panGestureRecognizer?.enabled = false
   }
 
   internal func panGestureDidChange(pan: UIPanGestureRecognizer) {
