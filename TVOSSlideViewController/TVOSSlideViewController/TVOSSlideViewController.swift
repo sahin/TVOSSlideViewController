@@ -76,6 +76,9 @@ public class TVOSSlideViewController: UIViewController {
   @IBInspectable public var rightTrashold: CGFloat = 0.1
   @IBInspectable public var leftTrashold: CGFloat = 0.1
 
+  // for smoothing pan gesture update speed
+  @IBInspectable public var panMultiplier: CGFloat = 1
+
   // animate contentView autolayout enabled or not
   @IBInspectable public var shrinks: Bool = false
 
@@ -340,21 +343,22 @@ public class TVOSSlideViewController: UIViewController {
   internal func panGestureDidChange(pan: UIPanGestureRecognizer) {
     if pan == panGestureRecognizer {
       let translation = pan.translationInView(view)
+      let value = translation.x * panMultiplier
 
       switch type {
       case .LeftRightDrawer:
-        if translation.x > 0 {
-          updateLeftDrawer(translation.x, state: pan.state)
+        if value > 0 {
+          updateLeftDrawer(value, state: pan.state)
         } else {
-          updateRightDrawer(translation.x, state: pan.state)
+          updateRightDrawer(value, state: pan.state)
         }
       case .LeftDrawer:
-        if translation.x > 0 {
-          updateLeftDrawer(translation.x, state: pan.state)
+        if value > 0 {
+          updateLeftDrawer(value, state: pan.state)
         }
       case .RightDrawer:
-        if translation.x < 0 {
-          updateRightDrawer(translation.x, state: pan.state)
+        if value < 0 {
+          updateRightDrawer(value, state: pan.state)
         }
       case .NoDrawer:
         break
